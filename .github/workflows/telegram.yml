@@ -1,0 +1,4 @@
+- name: Notify Telegram on failure
+  if: failure()
+  run: |
+    curl -X POST "https://api.telegram.org/bot<7657684920:AAHvL7fCBUFZ_Ouz8nbstgzEu9dsjRgNBtg>/sendMessage" -d "chat_id=<-1002585245388>&text=Tests failed in the CI pipeline!"

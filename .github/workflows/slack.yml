@@ -1,0 +1,4 @@
+- name: Notify Slack on failure
+  if: failure()
+  run: |
+    curl -X POST -H 'Content-type: application/json' --data '{"text":"Tests failed in the CI pipeline!"}' https://hooks.slack.com/services/https://hooks.slack.com/services/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
