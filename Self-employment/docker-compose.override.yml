@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    volumes:
+      - .:/app
+    environment:
+      DEBUG: "true"
+    command: sh -c "python wait_for_db.py && python manage.py runserver 0.0.0.0:8000"
+    depends_on:
+      - db_postgres
+      - db_mysql
+      - redis
+
+  db_postgres:
+    ports:
+      - "5432:5432"
+
+  db_mysql:
+    ports:
+      - "3306:3306"
+
+  redis:
+    ports:
+      - "6379:6379"

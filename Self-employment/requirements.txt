@@ -1,0 +1,7 @@
+# Для PostgreSQL
+psycopg2-binary
+# Для MySQL
+mysql-connector-python
+# Для Redis
+redis
+
